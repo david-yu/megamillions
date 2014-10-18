@@ -29,4 +29,5 @@ function generateTickets(num) {
   }
 }
 
-generateTickets(5);
+var args = process.argv.slice(2);
+generateTickets(args[0]);
