@@ -3,6 +3,10 @@ function randomInt(low, high) {
   return Math.floor(Math.random() * (high - low) + low);
 }
 
+function sortNumber(a, b) {
+  return a - b;
+}
+
 function generateTicket() {
   ticket = []
   // create balls within the simulator
@@ -17,6 +21,9 @@ function generateTicket() {
     ticket.push(numbers[idx]);
     numbers.splice(idx, 1);
   }
+
+  // sort numbers before adding moneyball
+  ticket.sort(sortNumber);
 
   // select final moneyball number from 1 to 15
   ticket.push(randomInt(1,16));
